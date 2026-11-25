@@ -3,8 +3,6 @@ name: Neo4j Grafo 184838
 on:
   push:
     branches: [ "feature/184838" ]
-  pull_request:
-    branches: [ "development" ]
   workflow_dispatch:
 
 jobs:
@@ -49,10 +47,6 @@ jobs:
       - name: Set Python Path
         run: |
           echo "PYTHONPATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
-
-      - name: Cargar Grafo Base del Profesor (neo4j_load)
-        run: |
-          python -m src.neo4j_load
 
       - name: Crear y Consultar Grafo Simple (184838)
         run: |
